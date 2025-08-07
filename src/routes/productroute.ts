@@ -5,8 +5,8 @@ import { v2 as cloudinary } from 'cloudinary';
 import fileUpload from 'express-fileupload';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import CategoryModel from 'src/models/category';
-import { HybridRecommendationService } from 'src/service/hybridservice';
+import CategoryModel from '../models/category';
+import { HybridRecommendationService } from '../service/hybridservice';
 
 dotenv.config();
 const router = require('express').Router();

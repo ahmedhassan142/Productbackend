@@ -4,7 +4,7 @@ import express, { Request, Response,NextFunction } from "express";
 import cors from "cors";
 import productRoute from "./routes/productroute";
 import categoryRoute from "./routes/categoryroute";
-import Product from "./models/product";
+
 
 dotenv.config();
 
