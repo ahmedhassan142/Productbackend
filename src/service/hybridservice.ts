@@ -19,7 +19,7 @@ export class HybridRecommendationService {
       // If we have a product ID, get similar products
       if (productId) {
         const similarProducts = await this.similarityService.getSimilarProducts(productId);
-        recommendations.push(...similarProducts.map(item => ({
+        recommendations.push(...similarProducts.map((item :any)=> ({
           product: item.product,
           score: item.score * 0.7, // Weight similarity higher
           type: 'similarity'
@@ -28,7 +28,7 @@ export class HybridRecommendationService {
 
       // Always include popular products
       const popularProducts = await this.popularityService.getPopularProducts(limit);
-      recommendations.push(...popularProducts.map(product => ({
+      recommendations.push(...popularProducts.map((product:any) => ({
         product,
         score: 0.3, // Base weight for popularity
         type: 'popularity'

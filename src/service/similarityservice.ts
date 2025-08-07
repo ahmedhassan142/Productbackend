@@ -1,5 +1,5 @@
 // similarity.service.ts (optimized)
-import Product from '../models/product';
+import Product,{IProduct} from '../models/product';
 
 type SimilarityWeights = {
   category: number;
@@ -46,19 +46,19 @@ export class SimilarityService {
         product,
         score: this.calculateSimilarity(targetProduct, product, finalWeights)
       }))
-      .sort((a, b) => b.score - a.score)
+      .sort((a: { score: number }, b: { score: number }) => b.score - a.score)
       .slice(0, limit);
   }
 
   private calculateSimilarity(
-    productA: Product,
-    productB: Product,
+    productA: IProduct,
+    productB: IProduct,
     weights: SimilarityWeights
-  ) {
+  ):number {
     let score = 0;
 
     // Category match
-    if (productA.category.equals(productB.category)) {
+    if (productA.category === productB.category) {
       score += weights.category;
     }
 
