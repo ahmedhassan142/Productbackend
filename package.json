@@ -1,12 +1,12 @@
 {
   "name": "express-ts-server",
   "version": "1.0.0",
-   "main": "src/server.ts",
+   "main": "src/index.ts",
   "scripts": {
-    "dev": "nodemon  --delay 2000ms --signal SIGKILL --exec tsx src/server.ts",
+    "dev": "nodemon  --delay 2000ms --signal SIGKILL --exec tsx src/index.ts",
     "build": "tsc --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1",
-     "start": "node build/server.js"
+     "start": "node build/index.js"
   },
   "keywords": [],
   "author": "",
